@@ -1,0 +1,18 @@
+{
+  "name": "com.unlimited-fairytales.virtualizedlist",
+  "displayName": "Uft.VirtualizedList",
+  "version": "1.0.0",
+  "unity": "6000.0",
+  "description": "This is simple virtualized list.",
+  "author": {
+    "name": "Unlimited Fairytales",
+    "url": "https://unlimited-fairytales.com/"
+  },
+  "license": "MIT",
+  "samples": [
+    {
+      "displayName": "Uft.VirtualizedList",
+      "path": "Samples~/SimpleSample"
+    }
+  ]
+}
