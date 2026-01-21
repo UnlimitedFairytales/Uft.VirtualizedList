@@ -1,7 +1,7 @@
 {
   "name": "com.unlimited-fairytales.virtualizedlist",
   "displayName": "Uft.VirtualizedList",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "6000.0",
   "description": "This is simple virtualized list.",
   "author": {
