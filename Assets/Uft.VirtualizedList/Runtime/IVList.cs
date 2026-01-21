@@ -6,21 +6,26 @@ using UnityEngine.UI;
 
 namespace Uft.VirtualizedList
 {
-    /// <summary>
-    /// 上から順に配置される想定の仮想List
-    /// </summary>
+    /// <summary>上から順に配置される想定の仮想List。Itemのanchor・pivotは強制的に左上になる。</summary>
+    /// <remarks>vlg.padding.top + SUM(n)(TListItem.CalcHeight) + SUM(n-1)(vlg.spacing) + vlg.padding.bottom</remarks>
     public interface IVList<TListItem, TData>
         where TListItem : MonoBehaviour, IVListItem<TData>
     {
+        /// <summary>sizeDeltaがTotal Content Heightを保持する</summary>
         RectTransform RectTransform { get; }
+        /// <summary>これ自体はdisableして機能させない。paddingとspacingだけ利用する。</summary>
         VerticalLayoutGroup? VerticalLayoutGroup { get; }
+        /// <summary>ActivateItem時、プールが足らなければ自動でInstantiateされるため、そこまで気にしなくてもいい。</summary>
         int InitialPoolLength { get; }
         TListItem? ItemPrototype { get; }
+        /// <summary>全データ</summary>
         List<TData> DataList { get; }
         Queue<TListItem> Pool { get; }
+        /// <summary>RefreshActiveRangeによって決まる表示中のアイテム</summary>
         List<TListItem> ActiveList { get; }
         int ActiveStartDataIndex { get; set; }
 
+        /// <summary>VerticalLayoutGroupのdisableとプールを初期化数で用意。</summary>
         void AwakeLogic()
         {
             if (this.VerticalLayoutGroup != null)
@@ -51,6 +56,7 @@ namespace Uft.VirtualizedList
             return item;
         }
 
+        /// <summary>該当のdataIndexアイテムの位置を算出して設定。</summary>
         void PositionActiveItem(int dataIndex, TListItem activeItem)
         {
             var vlg = this.VerticalLayoutGroup!;
