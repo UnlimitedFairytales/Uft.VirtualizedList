@@ -260,6 +260,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unlimited-fairytales.fonts": {
+      "version": "https://github.com/UnlimitedFairytales/Fonts.git?path=Assets/Fonts",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6d654f79e08a24646fe664f0689c7a79bd41f5c4"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
